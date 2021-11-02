@@ -1,0 +1,43 @@
+com/example/mislugaresprueba/databinding/VistaLugarBinding.java
+ com.example.mislugaresprueba.databinding.VistaLugarBinding
+com/example/mislugaresprueba/VistaLugarActivity.java
+ com.example.mislugaresprueba.VistaLugarActivity
+ com.example.mislugaresprueba.VistaLugarActivity$1
+com/example/mislugaresprueba/AcercaDeActivity.java
+ com.example.mislugaresprueba.AcercaDeActivity
+com/example/mislugaresprueba/AdaptadorLugares.java
+ com.example.mislugaresprueba.AdaptadorLugares
+ com.example.mislugaresprueba.AdaptadorLugares$1
+ com.example.mislugaresprueba.AdaptadorLugares$ViewHolder
+com/example/mislugaresprueba/databinding/ContentMainBinding.java
+ com.example.mislugaresprueba.databinding.ContentMainBinding
+com/example/mislugaresprueba/databinding/ActivityMainBinding.java
+ com.example.mislugaresprueba.databinding.ActivityMainBinding
+com/example/mislugaresprueba/GeoPunto.java
+ com.example.mislugaresprueba.GeoPunto
+com/example/mislugaresprueba/BuildConfig.java
+ com.example.mislugaresprueba.BuildConfig
+com/example/mislugaresprueba/LugaresLista.java
+ com.example.mislugaresprueba.LugaresLista
+com/example/mislugaresprueba/RepositorioLugares.java
+ com.example.mislugaresprueba.RepositorioLugares
+com/example/mislugaresprueba/databinding/AcercadeBinding.java
+ com.example.mislugaresprueba.databinding.AcercadeBinding
+com/example/mislugaresprueba/databinding/EdicionLugarBinding.java
+ com.example.mislugaresprueba.databinding.EdicionLugarBinding
+com/example/mislugaresprueba/MainActivity.java
+ com.example.mislugaresprueba.MainActivity
+ com.example.mislugaresprueba.MainActivity$1
+ com.example.mislugaresprueba.MainActivity$2
+com/example/mislugaresprueba/Aplicacion.java
+ com.example.mislugaresprueba.Aplicacion
+com/example/mislugaresprueba/Lugar.java
+ com.example.mislugaresprueba.Lugar
+com/example/mislugaresprueba/Principal.java
+ com.example.mislugaresprueba.Principal
+com/example/mislugaresprueba/CasosUsoLugar.java
+ com.example.mislugaresprueba.CasosUsoLugar
+com/example/mislugaresprueba/databinding/ElementoListaBinding.java
+ com.example.mislugaresprueba.databinding.ElementoListaBinding
+com/example/mislugaresprueba/TipoLugar.java
+ com.example.mislugaresprueba.TipoLugar

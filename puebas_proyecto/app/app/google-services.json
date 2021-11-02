@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "203545564317",
+    "project_id": "buzonillo",
+    "storage_bucket": "buzonillo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203545564317:android:90d49c6d55e010f8ce3074",
+        "android_client_info": {
+          "package_name": "com.dalfaro.buzonillo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203545564317-tjhtotmsris4bthmk4gq97hmuq8uvbc4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dalfaro.buzonillo",
+            "certificate_hash": "047e51576f6d083aee6a11ec9ff0c4bf6fb4b331"
+          }
+        },
+        {
+          "client_id": "203545564317-b40mcsue8kak4jo2bmbhf15bu97vpmkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRASOnv9gvcD-SKtEpxMaAMfZfHeHGcL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203545564317-b40mcsue8kak4jo2bmbhf15bu97vpmkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

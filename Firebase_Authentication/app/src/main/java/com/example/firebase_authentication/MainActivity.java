@@ -3,6 +3,7 @@ package com.example.firebase_authentication;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.firebase_authentication.databinding.ActivityMainBinding;
 import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,24 +24,25 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.Query;
 
 public class MainActivity extends AppCompatActivity {
 
     ListenerRegistration registration;
+    private ActivityMainBinding binding;
+    public static AdaptadorLugaresFirestoreUI adaptador;
+
+    private LugaresAsinc lugares;
+    private CasosUsoLugar usoLugar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        /*
-        LugaresLista listaLugares = new LugaresLista();00
-        for (int id=0; id<listaLugares.tamaño(); id++){
-            db.collection("lugares").add(listaLugares.elemento(id));
-        }
-         */
-
         Log.d("Firestore", "activado el escuchador");
         registration = db.collection("coleccion").document("documento").addSnapshotListener(
                 new EventListener<DocumentSnapshot>() {
@@ -80,7 +84,28 @@ public class MainActivity extends AppCompatActivity {
         nombre.setText(usuario.getDisplayName());
 
 
+
+        adaptador = new AdaptadorLugaresFirestoreUI(opciones, this);
+        adaptador = ((Aplicacion) getApplicationContext()).adaptador;
+        adaptador.setOnItemClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int pos = binding.recyclerView.getChildAdapterPosition(v);
+                usoLugar.mostrar(pos);
+            }
+        });
+
+        lugares = ((Aplicacion) getApplication()).lugares;
+        usoLugar = new CasosUsoLugar(this, lugares);
+
+
+        binding.recyclerView.setAdapter(adaptador);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        adaptador.startListening();
     }
+
+
     protected void onDestroy() {
         super.onDestroy();
         Log.d("Firestore", "desactivado el escuchador");

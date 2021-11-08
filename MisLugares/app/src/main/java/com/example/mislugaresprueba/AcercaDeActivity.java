@@ -10,6 +10,4 @@ public class AcercaDeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acercade);
     }
-
-
 }

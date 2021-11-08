@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,7 +17,7 @@ public class AdaptadorPaquetes extends RecyclerView.Adapter<AdaptadorPaquetes.Vi
     private List<Paquete> mData;
     private LayoutInflater mInflater;
     private Context context;
-    final AdaptadorPaquetes.OnItemClickListener listener;
+    static final AdaptadorPaquetes.OnItemClickListener listener;
 
     public interface OnItemClickListener{
         void onItemClick(Paquete item);
@@ -52,16 +51,17 @@ public class AdaptadorPaquetes extends RecyclerView.Adapter<AdaptadorPaquetes.Vi
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nombre,fecha;
         CardView cv;
 
-        ViewHolder(View itemView){
-            super(itemView);
+        public ViewHolder(ElementoListaBinding itemView){
+            super(itemView.getRoot());
             nombre = itemView.findViewById(R.id.NombrePaquete);
             fecha = itemView.findViewById(R.id.fecha);
             cv = itemView.findViewById(R.id.cv);
         }
+
 
         void binData(final Paquete lista){
             nombre.setText(lista.getNombre());

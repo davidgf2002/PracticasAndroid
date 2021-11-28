@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ListAdapter;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -27,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         paqueteArrayList = new ArrayList<Paquete>();
         adaptador = new Adaptador(MainActivity.this, paqueteArrayList);
+
+        adaptador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "Por lo menos te saca el nombre: " + paqueteArrayList.get(recyclerView.getChildAdapterPosition(v)).getNombre(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), DescripcionPaquete.class);
+                startActivity(intent);
+            }
+        });
 
         recyclerView.setAdapter(adaptador);
 

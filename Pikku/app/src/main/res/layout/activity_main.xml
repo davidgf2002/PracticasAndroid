@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickScan"
+        android:text="Escanear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:onClick="onClickConnect"
+        android:text="Conectar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_scan" />
+
+    <TextView
+        android:id="@+id/text_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Desconectado"
+        app:layout_constraintBottom_toBottomOf="@+id/button_scan"
+        app:layout_constraintStart_toEndOf="@+id/button_scan"
+        app:layout_constraintTop_toTopOf="@+id/button_scan" />
+
+    <TextView
+        android:id="@+id/text_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="No conectado"
+        app:layout_constraintBottom_toBottomOf="@+id/button_connect"
+        app:layout_constraintStart_toEndOf="@+id/button_connect"
+        app:layout_constraintTop_toBottomOf="@+id/button_scan" />
+
+    <Button
+        android:id="@+id/arrancarMotor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="arrancarMotor"
+        android:text="Arrancar Motor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_connect" />
+
+    <Button
+        android:id="@+id/botonLed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="encenderLed"
+        android:text="Encender LED"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/arrancarMotor" />
+</androidx.constraintlayout.widget.ConstraintLayout>
